@@ -13,7 +13,7 @@ this algorithm transforms all points from `old_object` via translation and rotat
 
 
 ## 2D Example:
-Assume four points (0), (2), (3), (4) as follows:
+Assume five points (0), (1), (2), (3), (4) as follows:
 ```    
      y ^
        |
