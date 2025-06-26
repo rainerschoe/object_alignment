@@ -53,6 +53,8 @@ The result of the transformation would be:
        |
 ```
 
+> NOTE: For this example no rotation was required. So in theory only one mapped point would have been sufficient. However then without giving the information to not try rotations to the algorithm, an infinite amont of solutions would be possible (rotating the object around the mapped point)
+
 ## How it works:
 Developed using test driven development.
 
