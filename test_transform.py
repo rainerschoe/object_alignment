@@ -1,5 +1,6 @@
 import pytest
 from transform import transform
+from pprint import pprint
 
 @pytest.fixture
 def points_in_old_object():
@@ -10,6 +11,27 @@ def points_in_old_object():
         (0.0, 0.0, 1.0),
         (1.0, 1.0, 1.0)
     ]
+
+@pytest.fixture
+def points_in_xz():
+    return [
+        (0.0, 0.0, 0.0),
+        (0.5, 0.0, -4),
+        (1.0, 0.0, 2.0),
+        (6.0, 0.0, 6.0),
+        (-9.0, 0.0, 1.0),
+    ]
+def test_xz_to_xy(points_in_xz):
+    matching_points_in_new_object = [
+        (0, (0.0, 0.0, 0.0)),
+        (1, (15.0, 0.0, 0.0)),
+        (2, (0.0, 15.0, 0.0))
+    ]
+    result = transform(points_in_xz, matching_points_in_new_object)
+    assert len(result) == len(points_in_xz)
+    for new_point, old_point in zip(result, points_in_xz):
+        assert pytest.approx(new_point[2]) == 0
+        pprint(f"New point: {new_point}, Old point: {old_point}")
 
 def test_identity_transformation(points_in_old_object):
     matching_points_in_new_object = [
