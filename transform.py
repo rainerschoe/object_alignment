@@ -4,10 +4,15 @@ from typing import List, Tuple
 
 def transform(points_in_old_object: List[Tuple[float, float, float]], matching_points_in_new_object: List[Tuple[int, Tuple[float, float, float]]]) -> List[Tuple[float, float, float]]:
     """
-    Points_in_old_object will be transformed (translation + rotation) so that the distance matching_points_in_new_object to the points_in_old_object with matching index is minimized.
-    Result of the transformation with minimum distance is returned.
+    @param points_in_old_object: List of points in the old object, each point represented as a tuple (x, y, z).
 
-    For non-ambiguous results, at least three points in points_in_old_object and three corresponding points in matching_points_in_new_object are required.
+    @param matching_points_in_new_object: List of tuples where each tuple contains an index and a point in the new object.
+        The index corresponds to the index of the point in points_in_old_object.
+        For example, [(0, (x1, y1, z1)), (1, (x2, y2, z2)), ...] means that the point at index 0 in points_in_old_object should match with (x1, y1, z1) and so on.
+
+    @returns Result of the transformation of all points_in_old_object so that the distance matching_points_in_new_object to the points_in_old_object with matching index is minimized after performing rotationand translation.
+
+    @note For non-ambiguous results, at least three points in points_in_old_object and three corresponding points in matching_points_in_new_object are required.
     """
     # Extract the indices and corresponding points
     indices = [idx for idx, _ in matching_points_in_new_object]
