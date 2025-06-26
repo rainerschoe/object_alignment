@@ -62,7 +62,7 @@ The result of the transformation would be:
 ## How it works:
 Developed using test driven development.
 
-The tests are easy to understand and cover
+The [tests](test_transform.py) are easy to understand and cover
 - translations
 - rotations
 - combined translations and rotations
