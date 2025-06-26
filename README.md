@@ -18,7 +18,7 @@ Assume four points (0), (2), (3), (4) as follows:
      y ^
        |
       (2)
-       |
+(3)    |
        |
 ------(0)--(1)----> x
        |
@@ -49,7 +49,7 @@ The result of the transformation would be:
      y ^
        |
        | (2)
-       |
+   (3) |
        |
 -------|-(0)--(1)----> x
        |
