@@ -1,0 +1,59 @@
+# Align a point cloud with another point cloud
+
+This is just a small experiment.
+
+Given
+
+- `old_object`: a point cloud (=list of points in 3D space)
+- `matching_points` another list of at least 3 points
+- a mapping of every point in `matching_point` to a point in `old_point`
+
+this algorithm transforms all points from `old_object` via translation and rotation, such that the distance of mapped points is minimized.
+
+
+2D Example:
+Assume four points 0, 2, 3, 4 as follows:
+```    
+     y ^
+       |
+    1 (2)
+       |
+       |
+------(0)--(1)----> x
+       |    1
+ (4)   |
+       |
+       |
+
+```
+In 2D we would need only two mapped points. Let's choose some:
+
+```    
+     y ^
+       |
+    1  | (2')
+       |
+       |
+-------|------(1')-> x
+       |    1
+       |
+       |
+       |
+
+```
+
+The result of the transformation would be:
+
+```    
+     y ^
+       |
+    1  | (2)
+       |
+       |
+-------|-(0)--(1)----> x
+       |    1
+    (4)|
+       |
+       |
+
+```
