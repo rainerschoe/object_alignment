@@ -24,8 +24,6 @@ Assume five points (0), (1), (2), (3), (4) as follows:
        |
  (4)   |
        |
-       |
-
 ```
 In 2D we would need only two mapped points. Let's choose (1') and (2') as follows:
 
@@ -39,8 +37,6 @@ In 2D we would need only two mapped points. Let's choose (1') and (2') as follow
        |
        |
        |
-       |
-
 ```
 
 The result of the transformation would be:
@@ -55,8 +51,6 @@ The result of the transformation would be:
        |
     (4)|
        |
-       |
-
 ```
 
 ## How it works:
